@@ -14,9 +14,17 @@ class Orden:
     def __str__(self):
         computadorasStr = ''
         for computadora in self._computadoras:
-            computadorasStr += computadora.__str__() + '|'
+            computadorasStr += computadora.__str__()
 
         return f'Identificador: {self._idOrden}, \nProductos: {computadorasStr}'
+    
+    @property
+    def computadoras(self):
+        return self._computadoras
+    
+    @computadoras.setter
+    def computadoras(self, computadoras):
+        self._computadoras = computadoras
 
 if __name__ == "__main__":   
     computadora1  = Orden("Soy una pc")
