@@ -1,7 +1,6 @@
-from Monitor import *
-from Raton import *
-from Teclado import *
-from DispositivoEntrada import *
+from Monitor import Monitor
+from Raton import Raton
+from Teclado import Teclado
 
 class Computadora:
     contadorComputadoras = 0
@@ -15,7 +14,7 @@ class Computadora:
         self._raton = raton
     
     def __str__(self):
-        return f'ID {self._idComputadoras} Caracteristicas \nNombre: {self._nombre} \nCaracteristicas monitor: {self._monitor} \nCaracteristicas teclado: {self._teclado} \nCaracteristicas teclado: {self._raton}'
+        return f'ID {self._idComputadoras} \nNombre: {self._nombre} \nCaracteristicas monitor: {self._monitor} \nCaracteristicas teclado: {self._teclado} \nCaracteristicas teclado: {self._raton}\n'
     
     @property
     def nombre(self):
@@ -51,25 +50,15 @@ class Computadora:
     
 if __name__ == "__main__":   
     monitorRazer = Monitor("razer", 27)
-    print(monitorRazer)
     ratonRazer = Raton("usb", "razer")
-    print(ratonRazer)
     tecladoRazer = Teclado("usb", "razer")
-    print(tecladoRazer)
     
     pcRazer = Computadora("PC full Razer", monitorRazer, tecladoRazer, ratonRazer)
     print(pcRazer)
     
     monitorHP = Monitor("HP", 22)
-    print(monitorRazer)
     ratonGenerico = Raton("usb", "generica")
-    print(ratonGenerico)
     tecladoGenerico = Teclado("usb", "generica")
-    print(tecladoGenerico)
     
     pcOficina = Computadora("PC de Oficina", monitorHP, tecladoGenerico, ratonGenerico)
     print(pcOficina)
-    
-    
-        
-    
