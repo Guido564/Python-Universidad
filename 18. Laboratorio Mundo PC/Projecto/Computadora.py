@@ -10,7 +10,7 @@ class Computadora:
         self._raton = raton
     
     def __str__(self):
-        return f'{self._idComputadoras} {self._nombre} {self._monitor} {self._teclado} {self._raton}'
+        return f'ID: {self._idComputadoras} Nombre: {self._nombre} Caracteristicas monitor: {self._monitor} Caracteristicas teclado: {self._teclado} Caracteristicas teclado: {self._raton}'
     
     @property
     def nombre(self):
@@ -45,10 +45,7 @@ class Computadora:
         self._raton = raton
     
 if __name__ == "__main__":   
-    computadora1  = Computadora("Soy una pc", 1, 2, 3)
-    print(computadora1)
-    computadora2  = Computadora("Soy una pc", 1, 2, 3)
-    print(computadora2)
+    pass
     
     
     
