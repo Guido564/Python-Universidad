@@ -1,5 +1,4 @@
 import os
-from dominio import Pelicula
 
 class CatalogoPeliculas:
     rutaArchivo = 'peliculas.txt'
