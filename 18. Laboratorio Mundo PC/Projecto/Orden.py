@@ -20,7 +20,7 @@ class Orden:
         for computadora in self._computadoras:
             computadorasStr += computadora.__str__()
 
-        return f'Identificador {self._idOrden}, \nProductos: {computadorasStr}'
+        return f'Identificador {self._idOrden}, \nComputadoras: {computadorasStr}'
     
     @property
     def computadoras(self):
@@ -45,8 +45,12 @@ if __name__ == "__main__":
     pcGamer2 = Computadora("PC segundo pedido", monitorAcer, tecladoHyperx, ratonHyperx)
     pcGamer3 = Computadora("PC tercer pedido", monitorAcer, tecladoRazer, ratonLogitech)
     
-    pedido1 = [pcGamer1, pcGamer2, pcGamer3]
-    print(Orden(pedido1))
+    pedido1 = [pcGamer1, pcGamer2]
+    factura = Orden(pedido1)
+    print(factura)
+    
+    factura.agregarComputadora(pcGamer3)
+    print(factura)
         
     
     
