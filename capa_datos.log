@@ -1,0 +1,10 @@
+09:50:10 AM: DEBUG [Persona.py:50] 
+                ID del usuario: 1 
+                Nombre: guido 
+                Contrasenia: 123
+                
+09:51:10 AM: DEBUG [Persona.py:42] 
+                ID del usuario: 1 
+                Nombre: guido 
+                Contrasenia: 123
+                
