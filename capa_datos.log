@@ -156,3 +156,95 @@ DETAIL:  Failing row contains (5, pruzzo123, null).
 09:53:29 PM: DEBUG [cursorDelPool.py:16] Se ejecuta el metodo exit
 09:53:29 PM: DEBUG [cursorDelPool.py:22] Ha salido todo bien
 09:53:29 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000227FFAD3670; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:14:09 PM: DEBUG [cursorDelPool.py:10] Inicio del metodo enter
+10:14:09 PM: DEBUG [conexion.py:27] La conexcion ha sido un exito y todo marcha bien: <psycopg2.pool.SimpleConnectionPool object at 0x0000021A2AC38280>
+10:14:09 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x0000021A2A9DC040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:14:09 PM: DEBUG [usuarioDao.py:30] Usuario a aniadir: 
+                ID del usuario: None 
+                Nombre:  
+                Contrasenia: pepe
+                
+10:14:09 PM: DEBUG [usuarioDao.py:33] Usuario aniadido: 
+                ID del usuario: None 
+                Nombre:  
+                Contrasenia: pepe
+                
+10:14:09 PM: DEBUG [cursorDelPool.py:16] Se ejecuta el metodo exit
+10:14:09 PM: DEBUG [cursorDelPool.py:22] Ha salido todo bien
+10:14:09 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x0000021A2A9DC040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:14:09 PM: DEBUG [menuAppUsuario.py:24] Usuario aniadido exitosamente: 1
+10:19:37 PM: DEBUG [cursorDelPool.py:10] Inicio del metodo enter
+10:19:37 PM: DEBUG [conexion.py:27] La conexcion ha sido un exito y todo marcha bien: <psycopg2.pool.SimpleConnectionPool object at 0x0000020127AAD9C0>
+10:19:37 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x0000020127A9C040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:19:37 PM: DEBUG [usuarioDao.py:41] Usuario actualizado: 
+                ID del usuario: 7 
+                Nombre: cheryl 
+                Contrasenia: SL3
+                
+10:19:37 PM: DEBUG [cursorDelPool.py:16] Se ejecuta el metodo exit
+10:19:37 PM: DEBUG [cursorDelPool.py:22] Ha salido todo bien
+10:19:37 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x0000020127A9C040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:19:37 PM: DEBUG [menuAppUsuario.py:31] Usuario actualizado con mucho exito: 1
+10:34:52 PM: DEBUG [cursorDelPool.py:10] Inicio del metodo enter
+10:34:52 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x0000020127A9C040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:34:52 PM: DEBUG [usuarioDao.py:30] Usuario a aniadir: 
+                ID del usuario: None 
+                Nombre: franzk 
+                Contrasenia: praga
+                
+10:34:52 PM: DEBUG [usuarioDao.py:33] Usuario aniadido: 
+                ID del usuario: None 
+                Nombre: franzk 
+                Contrasenia: praga
+                
+10:34:52 PM: DEBUG [cursorDelPool.py:16] Se ejecuta el metodo exit
+10:34:52 PM: DEBUG [cursorDelPool.py:22] Ha salido todo bien
+10:34:52 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x0000020127A9C040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:34:52 PM: DEBUG [menuAppUsuario.py:24] Usuario aniadido exitosamente: 1
+10:54:52 PM: DEBUG [cursorDelPool.py:10] Inicio del metodo enter
+10:54:52 PM: DEBUG [conexion.py:27] La conexcion ha sido un exito y todo marcha bien: <psycopg2.pool.SimpleConnectionPool object at 0x000002566C95BC40>
+10:54:52 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x000002566E6CC040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:54:52 PM: DEBUG [cursorDelPool.py:16] Se ejecuta el metodo exit
+10:54:52 PM: DEBUG [cursorDelPool.py:22] Ha salido todo bien
+10:54:52 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x000002566E6CC040; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:58:38 PM: DEBUG [conexion.py:27] La conexcion ha sido un exito y todo marcha bien: <psycopg2.pool.SimpleConnectionPool object at 0x00000204C2DBBB50>
+10:58:38 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:58:38 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:03 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:03 PM: DEBUG [usuarioDao.py:39] Usuario a aniadir: 
+                ID del usuario: None 
+                Nombre: miyel 
+                Contrasenia: lamaslinda
+                
+10:59:03 PM: DEBUG [usuarioDao.py:42] Usuario aniadido: 
+                ID del usuario: None 
+                Nombre: miyel 
+                Contrasenia: lamaslinda
+                
+10:59:03 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:20 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:20 PM: DEBUG [usuarioDao.py:58] Usuario eliminado: 
+                ID del usuario: 2 
+                Nombre: None 
+                Contrasenia: None
+                
+10:59:20 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:39 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+10:59:39 PM: DEBUG [usuarioDao.py:39] Usuario a aniadir: 
+                ID del usuario: None 
+                Nombre: Guido 
+                Contrasenia: deseolaeternidad
+                
+10:59:39 PM: DEBUG [usuarioDao.py:42] Usuario aniadido: 
+                ID del usuario: None 
+                Nombre: Guido 
+                Contrasenia: deseolaeternidad
+                
+10:59:39 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+11:00:17 PM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+11:00:17 PM: DEBUG [usuarioDao.py:50] Usuario actualizado: 
+                ID del usuario: 6 
+                Nombre: Alejandrina 
+                Contrasenia: Pruzzo123
+                
+11:00:17 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
