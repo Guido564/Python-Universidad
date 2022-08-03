@@ -1,9 +1,7 @@
-from sqlite3 import Cursor
-from conexion import Conexion
 from usuario import Usuario
 from logger import log
 from cursorDelPool import CursorDelPool
-import psycopg2
+
 
 
 class UsuarioDAO:

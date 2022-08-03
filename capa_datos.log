@@ -248,3 +248,6 @@ DETAIL:  Failing row contains (5, pruzzo123, null).
                 Contrasenia: Pruzzo123
                 
 11:00:17 PM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x00000204C2C739A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:21:17 AM: DEBUG [conexion.py:27] La conexcion ha sido un exito y todo marcha bien: <psycopg2.pool.SimpleConnectionPool object at 0x000002759B65BB50>
+06:21:17 AM: DEBUG [conexion.py:38] La conexion del pool ha estado relativamente bien: <connection object at 0x000002759B512CE0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:21:17 AM: DEBUG [conexion.py:44] Liberada la conexion correctamente: <connection object at 0x000002759B512CE0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
