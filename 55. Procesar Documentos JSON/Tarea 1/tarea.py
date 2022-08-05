@@ -13,7 +13,7 @@ cuerpo_respuesta = respuesta.read()
 json_respuesta = json.loads(cuerpo_respuesta.decode("utf-8"))
 
 for clima in json_respuesta['clima']:
-    print(clima['principal'])
+    print(clima['descripcion'])
     
 print(json_respuesta['principal']['temp_min'])
 print(json_respuesta['principal']['temp_max'])
