@@ -5,24 +5,15 @@ ventana = tk.Tk()
 ventana.geometry('600x400')
 ventana.title('Hola soy una ventana ja')
 
-def crear_tabs():
-    #Tab control
-    control_tabulador = ttk.Notebook(ventana)
-    #Frame para organizar elementos dentro del tab
-    tabulalodor1= ttk.Frame(control_tabulador)
-    #Tabulador al control de tabuladores
-    control_tabulador.add(tabulalodor1, text='El primero de muchos')
-    #Se ve el tabulador lindo
-    control_tabulador.pack(fill='both')
-    
+def componentes_tabulador1(tabulador):
     #Etiqueta y componente de entrada
-    etiqueta1 = ttk.Label(tabulalodor1, text='Su nombre de usuario:')
+    etiqueta1 = ttk.Label(tabulador, text='Su nombre de usuario:')
     etiqueta1.grid(row=0, column=0, padx=5, pady=5)
-    entrada1 = ttk.Entry(tabulalodor1, width=30)
+    entrada1 = ttk.Entry(tabulador, width=30)
     entrada1.grid(row=0, column=1, padx=5, pady=5)
-    etiqueta2 = ttk.Label(tabulalodor1, text='Su pass si se atreve:')
+    etiqueta2 = ttk.Label(tabulador, text='Su pass si se atreve:')
     etiqueta2.grid(row=1, column=0, padx=5, pady=5)
-    entrada2 = ttk.Entry(tabulalodor1, width=30, show='*')
+    entrada2 = ttk.Entry(tabulador, width=30, show='*')
     entrada2.grid(row=1, column=1, padx=5, pady=5)
     #Boton
     def enviar():
@@ -38,9 +29,22 @@ def crear_tabs():
         else:
             messagebox.showinfo('Datos', f'Su nombre de usuario es: {user}\nSu pass es: {password}')
 
-    
-    boton1 = ttk.Button(tabulalodor1, text='Lo quiere enviar?', command=enviar)
+    boton1 = ttk.Button(tabulador, text='Lo quiere enviar?', command=enviar)
     boton1.grid(row=3, column=0, padx=5, pady=5, columnspan=2)
+    
+
+def crear_tabs():
+    #Tab control
+    control_tabulador = ttk.Notebook(ventana)
+    #Frame para organizar elementos dentro del tab
+    tabulador1= ttk.Frame(control_tabulador)
+    #Tabulador al control de tabuladores
+    control_tabulador.add(tabulador1, text='El primero de muchos')
+    #Se ve el tabulador lindo
+    control_tabulador.pack(fill='both')
+    #Creacion componentes tabulador1
+    componentes_tabulador1(tabulador1)
+    
     
 
 crear_tabs()
