@@ -1,11 +1,14 @@
 from textwrap import wrap
 import tkinter as tk
-from tkinter import ttk, messagebox, scrolledtext
+from tkinter import Label, ttk, messagebox, scrolledtext
 from turtle import width
+import sys, os
 
 ventana = tk.Tk()
-ventana.geometry('600x400')
+ventana.geometry('800x800')
 ventana.title('Hola soy una ventana ja')
+
+imagen = tk.PhotoImage(file="57. Componentes en Tkinter\Tarea 1\Cheryl.png")
 
 def componentes_tabulador1(tabulador):
     #Etiqueta y componente de entrada
@@ -38,7 +41,7 @@ def componentes_tabulador2(tabulador):
     contenido = '''«Ay», dijo el ratón, «el mundo se está haciendo más chiquito cada día. Al principio era tan grande que yo tenía miedo, corría y corría, y me alegraba cuando al fin veía paredes a lo lejos a diestra y siniestra, pero estas largas paredes se han achicado tanto que ya estoy en la última cámara, y ahí en la esquina está la trampa a la cual yo debo caer». «Sólamente tienes que cambiar tu dirección», dijo el gato, y se lo comió. 
                                             -Fran Kafka'''
 
-    scroll = scrolledtext.ScrolledText(tabulador, width=65, height=462, wrap=tk.WORD)
+    scroll = scrolledtext.ScrolledText(tabulador, width=100, height=462, wrap=tk.WORD)
     scroll.insert(tk.INSERT, contenido)
     scroll.grid(row=0, column=0)
     
@@ -58,6 +61,19 @@ def componentes_tabulador3(tabulador):
     
     boton1 = ttk.Button(tabulador, text='Lo quiere enviar?', command=enviar)
     boton1.grid(row=2, column=0, padx=5, pady=5)
+
+
+def componentes_tabulador4(tabulador):
+    def info():
+        messagebox.showinfo('Esto es lo que hay', 'https://silenthill.fandom.com/es/wiki/Cheryl_Mason')
+    
+    label = Label(image=imagen)
+    label.pack()
+    boton_imagen = ttk.Button(tabulador, image=imagen, command=info)
+    boton_imagen.grid(row=0, column=0)
+    
+def componentes_tabulador5(tabulador):
+    pass
     
 def crear_tabs():
     #Tab control
@@ -66,10 +82,14 @@ def crear_tabs():
     tabulador1 = ttk.Frame(control_tabulador)
     tabulador2 = ttk.LabelFrame(control_tabulador, text='Una pequenia fabula')
     tabulador3 = ttk.Frame(control_tabulador)
+    tabulador4 = ttk.Frame(control_tabulador)
+    tabulador5 = ttk.Frame(control_tabulador)
     #Control de tabuladores
     control_tabulador.add(tabulador1, text='El primero de muchos')
     control_tabulador.add(tabulador2, text='El segundo hermano')
     control_tabulador.add(tabulador3, text='Estoy para datos (3)')
+    control_tabulador.add(tabulador4, text='Cheryl')
+    control_tabulador.add(tabulador5, text='Barras para progresar')
     #Se ve el tabulador lindo
     control_tabulador.pack(fill='both')
     #Creacion componentes tabulador1
@@ -78,6 +98,10 @@ def crear_tabs():
     componentes_tabulador2(tabulador2)
     #Creacion componentes tabulador3
     componentes_tabulador3(tabulador3)
+    #Creacion componentes tabulador4
+    componentes_tabulador4(tabulador4)
+    #Creacion componentes tabulador5
+    componentes_tabulador5(tabulador5)
 
 crear_tabs()
 
