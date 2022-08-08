@@ -1,8 +1,9 @@
 from textwrap import wrap
+from time import sleep
 import tkinter as tk
 from tkinter import Label, ttk, messagebox, scrolledtext
 from turtle import width
-import sys, os
+from time import sleep
 
 ventana = tk.Tk()
 ventana.geometry('800x800')
@@ -73,7 +74,39 @@ def componentes_tabulador4(tabulador):
     boton_imagen.grid(row=0, column=0)
     
 def componentes_tabulador5(tabulador):
-    pass
+    barra_progreso = ttk.Progressbar(tabulador, orient='horizontal', length=750)
+    barra_progreso.grid(row=0, column=0, padx=10, pady=10, columnspan=4)
+    
+    def ejecutar():
+        barra_progreso['maximum'] = 100
+        for valor in range(101):
+            sleep(0.05)
+            barra_progreso['value'] = valor
+            barra_progreso.update()
+        barra_progreso['value'] = 0
+    
+    def ejecutar_ciclo():
+        barra_progreso.start()
+        
+    def detener():
+        barra_progreso.stop()
+    
+    def detener_segundos():
+        esperar_ms = 1000
+        ventana.after(esperar_ms, barra_progreso.stop)
+    
+    boton_inicio = ttk.Button(tabulador,
+                              text='Ejecutar el progreso', command=ejecutar)
+    boton_inicio.grid(row=1, column=0)
+    boton_ciclo = ttk.Button(tabulador,
+                              text='Ejecutar ciclo', command=ejecutar_ciclo)
+    boton_ciclo.grid(row=1, column=1)
+    boton_detener = ttk.Button(tabulador,
+                              text='Detener ejecucion', command=detener)
+    boton_detener.grid(row=1, column=2)
+    boton_detener_segundos = ttk.Button(tabulador,
+                              text='Detener ejecucion a los segundos', command=detener_segundos)
+    boton_detener_segundos.grid(row=1, column=3)
     
 def crear_tabs():
     #Tab control
