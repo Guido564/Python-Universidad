@@ -4,7 +4,7 @@ from tkinter import messagebox
 class Calculadora(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.geometry('312x450')
+        self.geometry('320x330')
         self.resizable(0,0)
         self.title('Calculadora')
         
@@ -76,9 +76,15 @@ class Calculadora(tk.Tk):
         boton_igual.grid(row=4, column=3, padx=1, pady=1)
     
     def _evento_evaluar(self):
-        resultado = str(eval(self.expresion))
-        self.entrada_texto.set(resultado)
-        self.expresion = ''
+        try:
+            if self.expresion:
+                resultado = str(eval(self.expresion))
+                self.entrada_texto.set(resultado)
+        except Exception as e:
+            messagebox.showerror('Error', f'Ocurrio un error: {e}')
+            self.entrada_texto.set('')
+        finally:
+            self.expresion = ''
     
     def _evento_limpiar(self):
         self.expresion = ''
