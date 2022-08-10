@@ -72,12 +72,13 @@ def reiniciar():
     
 def evaluar_operacion():
     try:
-        operacion = ingreso_operaciones.get()
-        resultado = eval(operacion)
-        ingreso_operaciones.delete(0, 'end')
-        ingreso_operaciones.insert(INSERT, resultado)
+        if ingreso_operaciones.get():
+            operacion = ingreso_operaciones.get()
+            resultado = eval(operacion)
+            ingreso_operaciones.delete(0, 'end')
+            ingreso_operaciones.insert(INSERT, resultado)
     except Exception as e:
-        print(f'Deje nene que se rompe el programita: {e}')
+        messagebox.showerror('Error', f'Deje nene que se rompe el programita: {e}')
         ingreso_operaciones.delete(0, 'end')
     
 def crear_componentes():
