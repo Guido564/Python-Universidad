@@ -23,31 +23,31 @@ ingreso_operaciones = ttk.Entry(ventana, width=20, justify='right')
 ingreso_operaciones.grid(row=0, column=0, columnspan=4, sticky='NSWE')
 
 def agregar0():
-        ingreso_operaciones.insert(INSERT, '0')
+    ingreso_operaciones.insert(INSERT, '0')
         
 def agregar1():
     ingreso_operaciones.insert(INSERT, '1')
 
 def agregar2():
-        ingreso_operaciones.insert(INSERT, '2')
+    ingreso_operaciones.insert(INSERT, '2')
         
 def agregar3():
     ingreso_operaciones.insert(INSERT, '3')
 
 def agregar4():
-        ingreso_operaciones.insert(INSERT, '4')
+    ingreso_operaciones.insert(INSERT, '4')
         
 def agregar5():
     ingreso_operaciones.insert(INSERT, '5')
     
 def agregar6():
-        ingreso_operaciones.insert(INSERT, '6')
+    ingreso_operaciones.insert(INSERT, '6')
         
 def agregar7():
     ingreso_operaciones.insert(INSERT, '7')
 
 def agregar8():
-        ingreso_operaciones.insert(INSERT, '8')
+    ingreso_operaciones.insert(INSERT, '8')
         
 def agregar9():
     ingreso_operaciones.insert(INSERT, '9')
