@@ -1,6 +1,5 @@
 import tkinter as tk
-from tkinter import INSERT, ttk
-from typing import Text
+from tkinter import INSERT, ttk, messagebox
 
 ventana = tk.Tk()
 ventana.geometry('400x450')
@@ -22,7 +21,6 @@ ventana.columnconfigure(3, weight=1)
 
 ingreso_operaciones = ttk.Entry(ventana, width=20, justify='right')
 ingreso_operaciones.grid(row=0, column=0, columnspan=4, sticky='NSWE')
-
 
 def agregar0():
         ingreso_operaciones.insert(INSERT, '0')
@@ -73,16 +71,20 @@ def reiniciar():
     ingreso_operaciones.delete(0, 'end')
     
 def evaluar_operacion():
-    operacion = ingreso_operaciones.get()
-    resultado = eval(operacion)
-    ingreso_operaciones.delete(0, 'end')
-    ingreso_operaciones.insert(INSERT, resultado)
+    try:
+        operacion = ingreso_operaciones.get()
+        resultado = eval(operacion)
+        ingreso_operaciones.delete(0, 'end')
+        ingreso_operaciones.insert(INSERT, resultado)
+    except Exception as e:
+        print(f'Deje nene que se rompe el programita: {e}')
+        ingreso_operaciones.delete(0, 'end')
     
 def crear_componentes():
     
-    boton_c = ttk.Button(ventana, text='C', command=reiniciar)
+    boton_c = ttk.Button(ventana, text='C', command=reiniciar, style="Custom.TButton")
     boton_c.grid(row=1, column=0, columnspan=3, sticky='NSWE')
-    boton_barra = ttk.Button(ventana, text='/', command=agregar_division)
+    boton_barra = ttk.Button(ventana, text='/', command=agregar_division, style="Custom.TButton")
     boton_barra.grid(row=1, column=3, sticky='NSWE')
     
     boton_7 = ttk.Button(ventana, text='7', command=agregar7)
@@ -91,7 +93,7 @@ def crear_componentes():
     boton_8.grid(row=2, column=1, sticky='NSWE')
     boton_9 = ttk.Button(ventana, text='9', command=agregar9)
     boton_9.grid(row=2, column=2, sticky='NSWE')
-    boton_mul = ttk.Button(ventana, text='*', command=agregar_multiplicacion)
+    boton_mul = ttk.Button(ventana, text='*', command=agregar_multiplicacion, style="Custom.TButton")
     boton_mul.grid(row=2, column=3, sticky='NSWE')
     
     boton_4 = ttk.Button(ventana, text='4', command=agregar4)
@@ -100,7 +102,7 @@ def crear_componentes():
     boton_5.grid(row=3, column=1, sticky='NSWE')
     boton_6 = ttk.Button(ventana, text='6', command=agregar6)
     boton_6.grid(row=3, column=2, sticky='NSWE')
-    boton_resta = ttk.Button(ventana, text='-', command=agregar_resta)
+    boton_resta = ttk.Button(ventana, text='-', command=agregar_resta, style="Custom.TButton")
     boton_resta.grid(row=3, column=3, sticky='NSWE')
     
     boton_1 = ttk.Button(ventana, text='1', command=agregar1)
@@ -109,23 +111,17 @@ def crear_componentes():
     boton_2.grid(row=4, column=1, sticky='NSWE')
     boton_3 = ttk.Button(ventana, text='3', command=agregar3)
     boton_3.grid(row=4, column=2, sticky='NSWE')
-    boton_suma = ttk.Button(ventana, text='+', command=agregar_suma)
+    boton_suma = ttk.Button(ventana, text='+', command=agregar_suma, style="Custom.TButton")
     boton_suma.grid(row=4, column=3, sticky='NSWE')
     
     boton_0 = ttk.Button(ventana, text='0', command=agregar0)
     boton_0.grid(row=5, column=0, columnspan=2, sticky='NSWE')
     boton_float = ttk.Button(ventana, text='.', command=agregar_float)
     boton_float.grid(row=5, column=2, sticky='NSWE')
-    boton_igual = ttk.Button(ventana, text='=', command=evaluar_operacion)
+    boton_igual = ttk.Button(ventana, text='=', command=evaluar_operacion, style="Custom.TButton")
     boton_igual.grid(row=5, column=3, sticky='NSWE')
-    
-    
-    
+
 
 crear_componentes()
-
-
-
-
 
 ventana.mainloop()
