@@ -3,13 +3,13 @@ from tkinter import Text, Menu, ttk
 from tkinter import filedialog
 
 def abrir():
-    if not texto.edit_modified():       
-        try:            
+    if not texto.edit_modified(): 
+        try:
             path = filedialog.askopenfile(filetypes = (("Text files", "*.txt"), ("All files", "*.*"))).name
                        
-            ventana.title('Notepad - ' + path)          
+            ventana.title('Notepad - ' + path)
             
-            with open(path, 'r') as f:             
+            with open(path, 'r') as f:
                 content = f.read()
                 texto.delete('1.0', tk.END)
                 texto.insert('1.0', content)
@@ -17,18 +17,18 @@ def abrir():
                 texto.edit_modified(0)
              
         except:
-            pass   
+            pass
     
-    else:       
-        guardar_como()      
+    else:
+        guardar_como()
         
-        texto.edit_modified(0)              
+        texto.edit_modified(0)
         abrir()
-        
-def guardar():    
+    
+def guardar():
     try:
         
-        path = ventana.title().split('-')[1][1:]   
+        path = ventana.title().split('-')[1][1:]
     
     except:
         path = ''
@@ -40,17 +40,17 @@ def guardar():
             f.write(content)
       
     else:
-        guardar_como()    
+        guardar_como()
     
     texto.edit_modified(0)
 
-def guardar_como():    
+def guardar_como():
     try:
         path = filedialog.asksaveasfile(filetypes = (("Text files", "*.txt"), ("All files", "*.*"))).name
         ventana.title('Notepad - ' + path)
     
     except:
-        return   
+        return
     
     with open(path, 'w') as f:
         f.write(texto.get('1.0', tk.END))
