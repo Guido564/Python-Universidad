@@ -39,6 +39,8 @@ class Ventana(QMainWindow):
         boton_salir.triggered.connect(self.click_salir)
         boton_ayuda.triggered.connect(self.click_acerca)
         
+        boton_salir.setShortcut(Qt.CTRL + Qt.Key_E)
+        
         barra.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         
         menu = self.menuBar()
