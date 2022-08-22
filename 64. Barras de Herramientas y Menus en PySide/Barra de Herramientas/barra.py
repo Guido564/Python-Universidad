@@ -1,6 +1,6 @@
-from PySide6.QtCore import Qt 
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QAction
-from PySide6.QtWidgets import QApplication, QLabel, QMainWindow, QToolBar
+from PySide6.QtWidgets import QMainWindow, QApplication, QLabel, QToolBar, QStatusBar
 
 
 class Ventana(QMainWindow):
@@ -18,6 +18,18 @@ class Ventana(QMainWindow):
         self.addToolBar(barra)
         
         boton = QAction('Boton', self)
+        barra.addAction(boton)
+        
+        self.setStatusBar(QStatusBar(self))
+        
+        boton.setStatusTip('Buen dia, que se le ofrece?')
+        
+        boton.triggered.connect(self.click_boton)
+        
+        boton.setCheckable(True)
+        
+    def click_boton(self, s):
+        print(f'Recibiendo click: {s}')
 
 if __name__ == '__main__':    
     app = QApplication([])
