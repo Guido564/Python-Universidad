@@ -32,12 +32,14 @@ class Ventana(QMainWindow):
         boton_nuevo.triggered.connect(self.click_boton_nuevo)
         boton_guardado.triggered.connect(self.click_guardado)
         
+        barra.setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        
         
     def click_boton_nuevo(self, s):
         print(f'Nuevo archivo: {s}')
         
     def click_guardado(self, s):
-        print(f'Guardar archivo: {s}')
+        print(f'Archivo guardado: {s}')
 
 if __name__ == '__main__':    
     app = QApplication([])
