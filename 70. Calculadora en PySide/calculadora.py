@@ -1,3 +1,4 @@
+from functools import partial
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import *
@@ -18,6 +19,7 @@ class Calculadora(QMainWindow):
         
         self._caja_texto()
         self._creacion_botones()
+        self._coneccion_botones()
         
     def _caja_texto(self):
         self.caja = QLineEdit()
@@ -30,7 +32,7 @@ class Calculadora(QMainWindow):
     def _creacion_botones(self):
         self.botones = {}
         layout_botones = QGridLayout()
-        botones = {
+        self.botones = {
             '7':(0,0),
             '8':(0,1),
             '9':(0,2),
@@ -50,13 +52,44 @@ class Calculadora(QMainWindow):
             '=':(3,4)
         }
         
-        for texto, posicion in botones.items():
+        for texto, posicion in self.botones.items():
             self.botones[texto] = QPushButton(texto)
             self.botones[texto].setFixedSize(40,40)
             layout_botones.addWidget(self.botones[texto], posicion[0],posicion[1])
         
         self.layout_principal.addLayout(layout_botones)  
         
+    def _coneccion_botones(self):
+        for texto, boton in self.botones.items():
+            if texto not in {'=', 'C'}:
+                boton.clicked.connect(partial(self._expresion, texto))
+            self.botones['C'].clicked.connect(self._limpiar)
+            self.botones['='].clicked.connect(self._calculo)
+                        
+    def _expresion(self, texto):
+        expresion = self.obtener_texto() + texto
+        self.actualizar(expresion)
+        
+    def obtener_texto(self):
+        return self.caja.text()
+    
+    def actualizar(self, texto):
+        self.caja.setText(texto)
+        self.caja.setFocus()
+        
+    def _limpiar(self):
+        self.actualizar('')
+        
+    def _calculo(self):
+        resultado = self._evaluar_expresion(self.obtener_texto())
+        self.actualizar(resultado)
+        
+    def _evaluar_expresion(self, expresion):
+        try:
+            resultado = str(eval(expresion))
+        except Exception as e:
+            resultado = 'Error! Error!'
+        return resultado
 
 if __name__ == '__main__':    
     app = QApplication([])
